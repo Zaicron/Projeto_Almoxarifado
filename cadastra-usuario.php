@@ -38,7 +38,7 @@
                         <input type="text" name="nome" placeholder="Insira o nome do usuario:">
                     </div>
                     <div class="form-input">
-                        <input type="text" name="id-escolhido" placeholder="Insira o novo ID de usuario:">
+                        <input type="text" name="idEscolhido" placeholder="Insira o novo ID de usuario:">
                     </div>
                     <div class="form-input">
                         <input type="password" name="senha" placeholder="Insira a senha temporaria:">
