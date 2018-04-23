@@ -8,12 +8,12 @@
     <body>
         <div class="container">
             <img src="img/icone.png">
-            <form>
+            <form method="post" action="autenticar.php">
                 <div class="form-input">
-                    <input type="text" name="username" placeholder="Insira seu usuario">
+                    <input type="text" name="nomeusuario" placeholder="Insira seu usuario">
                 </div>
                 <div class="form-input">
-                    <input type="password" name="password" placeholder="Insira sua senha">
+                    <input type="password" name="senha" placeholder="Insira sua senha">
                 </div>
                 <input type="submit" name="submit" value="LOGIN" class="btn-login"><br>
                 <a href="#">Esqueceu sua senha ?</a>
