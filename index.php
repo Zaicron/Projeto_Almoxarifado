@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Página de Login - Almoxarifado</title>
+        <title>Almoxarifado - Login</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="CSS/login.css">
     </head>

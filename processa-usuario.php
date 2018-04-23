@@ -1,17 +1,34 @@
+<?php
+
+include_once("conexao.php");
+
+$nome = $_POST['nome'];
+$nomeusuario = $_POST['nomeusuario'];
+$senha = $_POST['senha'];
+
+$sql = "insert into usuarios (nome, nomeusuario, senha) values ('$nome', '$nomeusuario','$senha')";
+
+$salvar = mysqli_query($conexao, $sql);
+
+$linhas = mysqli_affected_rows($conexao);
+
+mysqli_close($conexao);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Almoxarifado - Cadastrar Usuario</title>
+        <title>Almoxarifado</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
-        <link rel="stylesheet" href="CSS/cadastro-usuario.css">
     </head>
     
     <body>
         <h1 class="titulo-principal">Almoxarifado</h1>
         
-        <aside class="navegacao-solicitacao"> 
+        <aside class="navegacao-solicitacao">
             <h1 class="titulo-navegacao">Solicitação</h1>
             <nav> 
                 <ul>
@@ -28,25 +45,16 @@
         </aside>
         
         <div class="corpo-principal">
-            <div class="titulo-pagina">
-                <h2>Cadastrar Usuario</h2>
-            </div>
-            <div class="container">
             
-                <form method="post" action="processa-usuario.php">
-                    <div class="form-input">
-                        <input type="text" name="nome" maxlength="50" required autofocus placeholder="Insira o nome do usuario:">
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="nomeusuario" maxlength="50" placeholder="Insira o novo ID de usuario:">
-                    </div>
-                    <div class="form-input">
-                        <input type="password" name="senha" maxlength="50" placeholder="Insira a senha temporaria:">
-                    </div>
-                <input type="submit" name="submit" value="Cadastrar" class="btn-cadastrar"><br>
-                </form>
+            <?php
+                
+                if($linhas == 1){
+                    print "Cadastro efetuado com sucesso!";
+                }else{
+                    print "Cadastro não efetuado. <br> Já existe um Usuario com o mesmo nome.";
+                }
             
-            </div>
+            ?>
             
             
         </div>

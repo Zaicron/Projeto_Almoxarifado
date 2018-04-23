@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Almoxarifado - Cadastro de Produto</title>
+        <title>Almoxarifado - Cadastrar Produto</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
@@ -33,12 +33,12 @@
             </div>
             <div class="container">
             
-                <form>
+                <form method="post" action="processa-produto.php">
                     <div class="form-input">
-                        <input type="text" name="nome" placeholder="Insira o nome do produto:">
+                        <input type="text" name="nome" maxlength="50" required autofocus placeholder="Insira o nome do produto:">
                     </div>
                     <div class="form-input">
-                        <input type="text" name="username" placeholder="Insira a quantidade:">
+                        <input type="text" name="quantidade" placeholder="Insira a quantidade:">
                     </div>
                 <input type="submit" name="submit" value="Cadastrar" class="btn-cadastrar"><br>
                 </form>

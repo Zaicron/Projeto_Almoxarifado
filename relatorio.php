@@ -1,17 +1,29 @@
+<?php
+
+include_once("conexao.php");
+
+$filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
+
+$sql = "select * from produtos where nome like '%$filtro%' order by nome";
+$consulta = mysqli_query($conexao, $sql);
+$registros = mysqli_num_rows($consulta);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Almoxarifado - Cadastrar Usuario</title>
+        <title>Almoxarifado - Relatórios</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
-        <link rel="stylesheet" href="CSS/cadastro-usuario.css">
+        <link rel="stylesheet" href="CSS/alterar-usuario.css">
     </head>
     
     <body>
         <h1 class="titulo-principal">Almoxarifado</h1>
         
-        <aside class="navegacao-solicitacao"> 
+        <aside class="navegacao-solicitacao">
             <h1 class="titulo-navegacao">Solicitação</h1>
             <nav> 
                 <ul>
@@ -28,26 +40,38 @@
         </aside>
         
         <div class="corpo-principal">
-            <div class="titulo-pagina">
-                <h2>Cadastrar Usuario</h2>
-            </div>
-            <div class="container">
             
-                <form method="post" action="processa-usuario.php">
-                    <div class="form-input">
-                        <input type="text" name="nome" maxlength="50" required autofocus placeholder="Insira o nome do usuario:">
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="nomeusuario" maxlength="50" placeholder="Insira o novo ID de usuario:">
-                    </div>
-                    <div class="form-input">
-                        <input type="password" name="senha" maxlength="50" placeholder="Insira a senha temporaria:">
-                    </div>
-                <input type="submit" name="submit" value="Cadastrar" class="btn-cadastrar"><br>
-                </form>
+            <form method="get" action="">
+                <div class="form-input">
+                    <input type="text" name="filtro" maxlength="50" required autofocus placeholder="Insira o nome do produto:"> <input type="submit" name="submit" value="Buscar" class="btn-alterar"><br>
+                </div>
+            </form>
+                
+            <?php
             
-            </div>
+            print "Resultado da pesquisa com a palavra: $filtro <br><br>";
+                
+            print "$registros registros encontrados. <br><br>";
             
+            while($exibirRegistros = mysqli_fetch_array($consulta)){
+                
+                $codigo = $exibirRegistros[0];
+                $nome = $exibirRegistros[1];
+                $quantidade = $exibirRegistros[2];
+                
+                print "<article>";
+                
+                print "Código: $codigo    ";
+                print "Produto: $nome    ";
+                print "Quantidade: $quantidade    ";
+                
+                print "</article>";
+                
+            }
+            
+            mysqli_close($conexao);
+            
+            ?>
             
         </div>
         

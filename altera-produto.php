@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Almoxarifado - Cadastrar Usuario</title>
+        <title>Almoxarifado - Alterar Cadastro de Produto</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
-        <link rel="stylesheet" href="CSS/cadastro-usuario.css">
+        <link rel="stylesheet" href="CSS/alterar-usuario.css">
     </head>
     
     <body>
@@ -29,21 +29,18 @@
         
         <div class="corpo-principal">
             <div class="titulo-pagina">
-                <h2>Cadastrar Usuario</h2>
+                <h2>Alterar Produto</h2>
             </div>
             <div class="container">
             
-                <form method="post" action="processa-usuario.php">
+                <form>
                     <div class="form-input">
-                        <input type="text" name="nome" maxlength="50" required autofocus placeholder="Insira o nome do usuario:">
+                        <input type="text" name="nome" maxlength="50" required autofocus placeholder="Insira o nome do produto:">
                     </div>
                     <div class="form-input">
-                        <input type="text" name="nomeusuario" maxlength="50" placeholder="Insira o novo ID de usuario:">
+                        <input type="text" name="quantidade" placeholder="Insira a quantidade:">
                     </div>
-                    <div class="form-input">
-                        <input type="password" name="senha" maxlength="50" placeholder="Insira a senha temporaria:">
-                    </div>
-                <input type="submit" name="submit" value="Cadastrar" class="btn-cadastrar"><br>
+                <input type="submit" name="submit" value="Alterar" class="btn-alterar"><br>
                 </form>
             
             </div>

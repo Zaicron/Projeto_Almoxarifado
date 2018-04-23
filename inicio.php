@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Página Inicial - Almoxarifado</title>
+        <title>Almoxarifado - Página Inicial</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
